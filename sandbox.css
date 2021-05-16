@@ -1,38 +1,30 @@
+
+
 /* ========================================
 
-    CODE YOUR STYLES BELOW!
+    Great resource for creating custom
+    masking shapes in CSS3:
+    http://bennettfeely.com/clippy/
 
    ====================================== */
-.shadow-typo{
-    position:relative;
-    display: inline-block;
-    text-transform: uppercase;
 
-    color:teal;
-    font-family: cursive;
-    font-size: 6rem;
-    text-shadow: 3px 3px  1px rgb(217, 255, 0), 8px 8px 0px rgba(0,0,0,0.1);
-}
+   .clip-image-1 {
+     -webkit-clip-path: circle(50% at 50% 50%);
+             clip-path: circle(50% at 50% 50%);
+   }
 
-.threedee-typo{
-    font-size: 6rem;
-    text-transform: relative;
-    color:violet;
-    margin-top:10px ;
-    -webkit-transform: skew(-5deg , -5deg) rotate(5deg);
-            transform: skew(-5deg , -5deg) rotate(5deg);
-    -webkit-transform-origin: center center;
-            transform-origin: center center;
-    text-shadow: 1px 1px #d10e31,
-                 2px 2px #d10e31,
-                 3px 3px #d10e31,
-                 4px 4px #d10e31,
-                 5px 5px #d10e31,
-                 6px 6px #d10e32,
-                 7px 7px #d10e32,
-                 8px 8px hsl(50,100%,50%),
-                 9px 9px hsl(40,100%,40%),
-                 8px 8px hsl(30,100%,30%),
-                 10px 10px hsl(20,100%,20%),
-                 11px 11px hsl(10,100%,10%);
-}  
+   .clip-image-2{
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+             clip-path:  polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%); 
+   }
+
+   .clip-image-3{
+    -webkit-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%);
+             clip-path:   polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%); 
+   }
+
+   .clip-image-4{
+    -webkit-clip-path:  polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+             clip-path:   polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+   }
+  
