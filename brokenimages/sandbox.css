@@ -1,0 +1,37 @@
+
+
+/* ========================================
+
+    CODE YOUR STYLES BELOW!
+broken images are the images that are  not properly coded and 
+user cannot locate them from the path or url provided
+   ====================================== */
+
+   .image{
+       position:relative;
+       font-size: 0.7rem;
+       display: inline-block;
+       text-align: center;
+       text-transform: uppercase;
+       margin: 0 0 40px;
+
+   }
+    .image::before{
+     display: inherit;
+     position: absolute;
+     top: 0;
+     left: 0;
+     
+     width: 50%;
+     min-width: 200px;
+     padding: 10px 20px 10px 45px;
+     border: dashed 2px #888;
+     background-color: #f0f0f0;
+     border-image: url(brokenimage.jpg);
+     background-size: 10%;
+     background-repeat: no-repeat;
+     /*15px on y and 10px 0n x*/
+     background-position: 15px 10px;
+     z-index:1;
+     content: "" attr(alt) " not found";
+    }
