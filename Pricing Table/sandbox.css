@@ -1,0 +1,206 @@
+/* ========================================
+
+    CODE YOUR STYLES BELOW!
+
+   ====================================== */
+.pricing-table{
+    margin: 60px auto;
+}
+
+.pricing-table::after{
+    display: table;
+    content: "";
+    clear: both;
+}
+/*Selects all the divs where parent is pricing-table */
+.pricing-table > div{
+    display: block;
+    float: left;
+    width: 48%;
+    min-height: 1px;
+    background-color: #fff;
+    color:#555;
+    
+}
+
+.pricing-table>div:not(:last-child)
+{
+    margin-right: 2%;
+    
+}
+
+.pricing-block{
+    text-align: center;
+    border-radius: 5px;
+    overflow:hidden;
+}
+
+.pricing-header{
+    height: auto;
+    padding: 30px 20px 40px 60px ;
+    text-transform: uppercase;
+}
+
+.pricing-header .pricing-heading{
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: darkblue;
+
+}
+
+.pricing-price{
+   
+   color:#777;
+}
+
+.pricing-price>span{
+    display: inline-block;
+}
+
+.pricing-price__currency{
+    margin-top: 10px;
+    vertical-align: top;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1;
+    opacity: 0.6;
+
+
+}
+
+.pricing-price__value{
+    font-size: 5rem;
+    font-weight: bold;
+    line-height: 1;   
+}
+
+.pricing-price__duration{
+    font-size: 1.7rem;
+    
+    vertical-align: top;
+    margin-top: 10px;
+    opacity: 0.6;
+    line-height: 1;
+}
+
+ .pricing-body ul{
+    list-style: none;
+    margin-top: 0;
+    padding: 0;
+
+}
+
+.pricing-body ul li{
+  display: block;
+  padding: 10px 20px;
+  text-align: center;
+  margin: 0;
+}
+/*every second child*/
+.pricing-body ul li:nth-child(2n){
+     background-color: #fff;
+}
+
+.pricing-body ul li:nth-child(2n+1){
+    background-color: #f8f8f8;
+}
+
+.pricing-button,
+.pricing-button:link
+.pricing-button:visited{
+    display: block;
+    background-color: crimson;
+    padding:20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align:center;
+    color: white;
+    height: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    
+}
+
+.pricing-popular{
+  margin-top: -20px;
+
+}
+
+.pricing-popular .pricing-header{
+    padding-top: 40px;
+}
+
+.pricing-popular .pricing-footer{
+   padding-top: 30px;
+} 
+
+.pricing-popular .pricing-price{
+    color: violet;
+}
+
+.pricing-popular .pricing-button{
+    background-color: #ff88ff;
+    color: #fff;
+    margin-top: -10px;
+}
+
+.pricing-popular .pricing-button:hover{
+    background-color: #333;
+    color: #ff88ff;
+    box-shadow: 20px 20px  blue;
+}
+
+@media screen and ( max-width:1023px ){
+   .pricing-table{
+       margin: auto;
+   }
+
+   .pricing-table>div{
+       float: none;
+       width: 100%;
+
+   }
+
+   .pricing-table>div:not(:last-child){
+       margin-right: 0;
+       margin-bottom: 20px;
+
+   }
+
+   .pricing-body{
+       max-width: 100%;
+       overflow: hidden;
+       white-space: nowrap;
+        overflow-x: auto;
+
+   }
+
+   .pricing-body ul li{
+       display: inline-block;
+       vertical-align: bottom;
+
+   }
+
+
+   .pricing-body ul li:nth-child(2n){
+       background-color: cadetblue;
+
+   }
+   .pricing-footer{
+      padding-top: 0;
+
+   }
+
+   .pricing-body ul li:not(:first-child){
+       margin-left: -5px;
+   }
+
+   .pricing-popular{
+       margin-top: 30px;
+   }
+
+   .pricing-popular .pricing-header,
+   .pricing-popular .pricing-footer{
+       padding-top: 30px;
+   }
+}

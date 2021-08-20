@@ -1,0 +1,202 @@
+/* ========================================
+
+    CODE YOUR STYLES BELOW!
+
+   ====================================== */
+
+
+
+.path{
+    position:relative;
+    max-width: 100%;
+    height: 100px;
+    background-color: #333;
+    padding: 20px;
+    /*Box-sizing to keep the padding inside 150px height  else it will overflow*/
+    box-sizing: border-box;
+    box-shadow: 0 2px 0 #f33ff3;
+    /*When pacman and ghost goes off the path we want it to disappear rather than being visble */
+    overflow: hidden;
+}
+
+.path::after{
+  position:absolute;
+  content: "";
+  display: block;
+  border-top: 12px dotted white;
+  width: 90%;
+  /*width is 90% so to keep it in center distance from left and rigt should be 5%*/
+  left: 5%;
+  /*To keep it in center vertically height of the path is 100px and height of the pebble is 12px so 50%-6%*/
+  top: 50%;
+  margin-top: -6px;
+  
+}
+
+.pacman{
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    left: -20%;
+    animation: moveforward 5s linear infinite;
+    animation-delay: 0.5s;
+}
+
+.pacman::before, .pacman::after{
+    display: block;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    border: solid 30px yellow;
+    margin-top: -30px;
+    /*to make it look alike circle*/
+    border-radius: 50%;
+    /*to make its right quarter  look transparent*/
+    border-right-color:transparent;
+    border-bottom-color:transparent;
+    animation: mouthTop 0.7s ease infinite;
+}
+
+.pacman::after{
+    /*
+    Margin removed to connect the two pseudo elements
+margin-left: 65px;
+*/
+border-color: yellow;
+border-top-color: transparent;
+border-right-color:transparent ;
+animation: mouthBottom 0.7s ease infinite;
+}
+
+
+.ghost{
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    left: 20%;
+    height: 70px;
+    width: 50px;
+    margin-top: -35px;
+    background-color: red;
+    border-top-left-radius: 70px;
+    border-top-right-radius: 70px;
+    animation: moveforward 5s linear infinite, blinky 0.2s linear infinite;
+
+}
+/*use before and after for eyes*/
+.ghost::before,.ghost::after{
+content: "";
+position: absolute;
+background: white;
+height: 25px;
+width: 20px;
+border-radius: 100%;
+top:15px;
+margin-left: 3px;
+
+}
+
+.ghost::after{
+    content: "";
+    margin-left: 26px;
+}
+
+.eyes::before, .eyes::after{
+    position: absolute;
+    /*content is empty string so that it can be visible on the screen*/
+    content: "";
+    background: blue;
+    
+    display: block;
+    height: 10px;
+    width: 10px;
+    border-radius: 70px;
+    top: 25px;
+    left: 5px;
+    z-index:99 ;
+    animation: moveleft 0.5s linear  infinite;
+}
+
+.eyes::after{
+    left: 28px;
+    content:"";
+    animation: moveright 0.5s linear  infinite;
+}
+
+
+.skirt, .skirt::before, .skirt::after{
+    position: absolute;
+    height: 0;
+    width: 0;
+    border :solid 10px #333;
+    border-top-color: transparent;
+    bottom: -10px;
+}
+
+.skirt::before{
+    /*to make pseudo element visible content:"" is very important to add*/
+    content: "";
+     left:10px;
+}
+
+.skirt::after{
+    content: "";
+     left:30px;
+
+}
+@keyframes moveleft{
+    0%,100%{
+        left:5px;
+        
+       
+    }
+    50%{
+        top: 20px;
+        left: 10px;
+        
+    }
+}
+
+@keyframes moveright{
+    0%,100%{
+        left:28px;
+        
+
+    }
+    50%{
+        top: 20px;
+        left: 35px;
+        
+    }
+}
+
+@keyframes moveforward{
+    0%{
+        left:-20%;
+
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+@keyframes mouthTop{
+    50%{
+        transform: rotate(44deg);
+    }
+    
+}
+
+@keyframes mouthBottom{
+    50%{
+        transform: rotate(-44deg);
+    }
+    
+}
+
+@keyframes blinky{
+    50%{
+        background-color: hotpink;
+    }
+}

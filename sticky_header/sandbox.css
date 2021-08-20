@@ -1,0 +1,39 @@
+/*header will stick to the top o the page*/
+
+/* ========================================
+
+    CODE YOUR STYLES BELOW!
+
+   ====================================== */
+   .sticky-header-lesson{
+
+
+     margin-top: 200px;
+   }
+
+   .sticky-header{
+       height: 200px;
+       background-color: rgba(247,57,90, 0.9);
+       position:fixed;
+       width: 100%;
+       height: 180px;
+       top: 0;
+       z-index: 99;
+       
+       
+       box-shadow: 0 0 10px rgba(0,0,0, 0.2);
+       }
+
+    .sticky-header h1{
+        font-size: 2.8rem;
+        line-height:3.2rem ;
+        margin:10px;
+        padding: 60px 270px;
+        text-shadow:  0 -5px 0  rgba(3, 0, 12, 0.068);
+    }
+
+    .sticky-header h1 small{
+        font-size: 3rem;
+        color: saddlebrown;
+        text-shadow: none;
+    }

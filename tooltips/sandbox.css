@@ -1,0 +1,154 @@
+/* ========================================
+
+    CODE YOUR STYLES BELOW!
+
+   ====================================== */
+.tooltip {
+  position: relative;
+  height: 60px;
+  width:250px;
+  background-color: indianred;
+  line-height: 60px;
+  text-align: center;
+  color: white;
+  margin :0 auto;
+}
+
+/*On hover before and after  both will be displayed*/
+.tooltip:hover::before,
+.tooltip:hover::after{
+  display: inline-block;
+}
+
+
+.tooltip::before{
+    position: absolute;
+    z-index: 2;
+    display: none;
+    width: 200px;
+    font-size: 0.8em;
+    line-height: 1.4em;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    content: attr(title);
+    color: white;
+    border-radius: 5px;
+   
+
+}
+
+
+.tooltip::after{
+    position: absolute;
+    content: "";
+    display: none;
+    z-index: 2;
+    height: 0;
+    width: 0;
+    border: 5px solid transparent;
+    
+
+}
+
+/*TOP TOOLTIP*/
+
+.tooltip.top::before{
+
+     /*To take different measurements like percentage and pixels in one place*/
+    bottom: calc(100% + 5px);
+    left: 50%;
+    /*
+    use transform instead of  margin-left: ;
+   
+     margin-left:-11 */
+     transform: translateX(-50%);
+
+      /*To move it in the top*/
+
+   
+    
+}
+
+.tooltip.top::after{
+    border-top-color: rgba(0, 0, 0, 0.8);
+    bottom: 100%;
+    left: 50%;
+    /*
+    margin-bottom: -5px;*/
+    transform: translateX(-50%);
+    border-bottom: 0;
+}
+
+/*BOTTOM TOOLTIP*/
+
+.tooltip.bottom::before{
+    
+    left: 50%;
+    top:calc(50% + 35px);
+
+    /*
+   
+    use transform instead of  margin-left: ;
+   
+     margin-left:-11 */
+     transform: translateX(-50%);
+}
+
+
+.tooltip.bottom::after{
+    top:100%;
+    transform: translateX(-50%);
+    border-bottom-color: rgba(0, 0, 0, 0.8);
+   
+    left: 50%;
+    /*
+    margin-bottom: -5px;*/
+    
+    border-top-width: 0;
+}
+
+/*LEFT TOOLTIP*/
+
+.tooltip.left::before{
+    top:50%;
+    right: calc(100% + 5px);
+    /*
+    use transform instead of  margin-left: ;
+   
+     margin-left:-11 */
+     transform: translateY(-50%);
+}
+
+
+.tooltip.left::after{
+    border-left-color: rgba(0, 0, 0, 0.8);
+    top: 50%;
+    right: calc(100% );
+    /*
+    margin-bottom: -5px;*/
+    transform: translateY(-50%);
+    border-right-width: 0;
+}
+
+/*RIGHT TOOLTIP*/
+
+.tooltip.right::before{
+   
+    top: 50%;
+
+    transform: translateY(-50%);
+    left: calc(100% + 5px)
+   
+     
+}
+
+.tooltip.right::after{
+    border-right-color: rgba(0, 0, 0, 0.8);
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(100%);
+    /*
+    margin-bottom: -5px;*/
+    
+    border-left-width: 0;
+}

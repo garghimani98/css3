@@ -1,0 +1,77 @@
+/* ========================================
+
+    CODE YOUR STYLES BELOW!
+ Modal window is the pop up window that we see on websites some sort of notification or alert or request
+   ====================================== */
+
+   .overlay{
+       position:fixed;
+       top: 0;
+       bottom: 0;
+       left: 0;
+       right: 0;
+       background: #000;
+       /*puts it in front of everything in screen*/
+       z-index:99;
+       pointer-events: none;/*the element is never the target of mouse action*/
+       opacity: 0;
+       -webkit-transform: scale(0.5);
+       transform: scale(0.5);
+   }
+/*~ is general sibling combinator*/
+   input[type="checkbox"]:checked~.overlay{
+pointer-events: auto;
+opacity: 0.9;
+-webkit-transorm:scale(1);
+        transform: scale(1);
+-webkit-transition: transform 0.5s ease ,opacity 1s ease;
+         transition: transform 0.5s ease, opacity 1s ease;
+
+
+   }
+
+   .modal{
+       position:fixed;
+       top: 50%;
+       left: 50%;
+
+       /*Displayed on the top of everything*/
+       z-index: 100;
+       
+       background-color: wheat;
+       color: #000;
+       font-family: Verdana, Geneva, Tahoma, sans-serif;
+       font-size: 1rem;
+      
+       text-transform: uppercase;
+      
+       text-shadow: 0 10px 0 -2px #f8f8f8;
+        
+       -webkit-transform: translate(-50%, -50%) scale(0.5);
+       transform: translate(-50%, -50%) scale(0.5);
+       width: 100%;
+       max-width: 640px;
+       pointer-events: none;
+       /*initially not visible*/
+       opacity:0;
+       
+   }
+
+   input[type="checkbox"]:checked~.modal{
+    -webkit-transform: translate(-50%, -50%) scale(1);
+              transform: translate(-50%, -50%) scale(1);
+    -webkit-transition: transform 0.5s ease, opacity 0.3s ease;
+    transition: transform 0.5s ease, opacity 0.3s ease;
+
+    pointer-events: auto;
+    /*After clicking is visible*/
+    opacity: 1;
+    transition-delay: 0.1sec;
+   }
+
+   .modal__content{
+       display: block;
+       padding: 30px;
+       background-color: #fff;
+
+   }

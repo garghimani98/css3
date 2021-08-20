@@ -1,0 +1,131 @@
+
+/* ========================================
+
+    CODE YOUR STYLES BELOW!
+to create a modern layout with css3
+   ====================================== */
+/*width defines how much space it takes on screen in horizontal dimension..*/
+   .layout1 article{
+       width:50%;
+       float: left;
+   }
+
+   .layout1 aside{
+       width:40%;
+       float: right;
+
+   }
+
+   .layout1 footer{
+      clear: both;
+   }
+
+   /*Modern layout2*/
+
+   .layout2 header .logo{
+       width: 20%;
+       float: left;
+       
+       
+       color: blue;
+       
+   }
+
+   .layout2 header nav{
+   width: 78%;
+   float: right;
+   margin: 0;
+   }
+
+   /*Simple clearfix to prevent collapse*/
+
+   .layout2 header::after{
+
+    display: table;
+    content:"" ;
+    clear: both;
+
+    
+    }
+
+    .layout2 article{
+        width: 50%;
+        float: left;
+        margin-left: 2%;
+
+    }
+
+    .layout2 aside.sidenav{
+        width: 23%;
+        float: left;
+    }
+
+    .layout2 aside.sidebar{
+        width: 23%;
+        float: right;
+    }
+
+    .layout2 footer{
+        clear: both;
+    }
+
+    .layout3 header .logo{
+        color: brown;
+        font-weight: bolder;
+        float:right;
+        width:20%;
+        margin:0
+    }
+
+    
+    .layout3 header nav{
+        display: inline-block;
+        float:left;
+        width:70%;
+        margin: 0;
+        
+    }
+
+    /*To prevent collapsig of header*/
+    .layout3 header::after{
+        display: table;
+        content: "";
+        clear: both;
+    }
+
+    .layout3 article{
+        width: 30%;
+        float: left;
+        margin: 0  2% 0 0;
+
+    }
+   .layout3 .articles:last-child{
+       margin: 0;
+   }
+    .layout3 .articles::after{
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    
+
+    /*Simple media queries for responsiveness*/
+
+    @media screen and (max-width:768px)
+    {
+        .layout1 article,
+        .layout1 aside,
+        .layout2 header .logo,
+        .layout2 header nav,
+        .layout2 article,
+        .layout2 aside.sidenav,
+        .layout2 aside.sidebar,
+        .layout3 header .logo,
+        .layout3 header nav,
+        .layout3 article{
+  float: none;
+  width: 100%;
+  margin: 0 0 2%
+        }
+    }
